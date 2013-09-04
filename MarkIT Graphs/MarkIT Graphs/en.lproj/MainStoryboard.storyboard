@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="AJm-d3-XVV">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="klD-Yw-Dh8">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="AJm-d3-XVV" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="DsA-sD-oDj"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="VfR-Jd-vr1">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="2" kind="relationship" relationship="rootViewController" id="3CW-vl-unl"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8jK-Nt-7cv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-900" y="-188"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="4">
+            <objects>
+                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="2" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5">
+                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="bWe-nM-I0k">
+                                <color key="backgroundColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CompanyCell" textLabel="UkA-d0-cn2" detailTextLabel="7n6-M4-T6x" style="IBUITableViewCellStyleSubtitle" id="ymM-ko-bAa">
+                                        <rect key="frame" x="0.0" y="22" width="768" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="768" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UkA-d0-cn2">
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                    <color key="textColor" red="0.047058828179999998" green="0.34117648010000001" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Detail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7n6-M4-T6x">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <color key="backgroundColor" red="0.50196081399917603" green="0.50196081399917603" blue="0.50196081399917603" alpha="1" colorSpace="calibratedRGB"/>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="2" id="vAv-la-sLL"/>
+                                    <outlet property="delegate" destination="2" id="CGl-Gj-4xy"/>
+                                </connections>
+                            </tableView>
+                            <searchBar contentMode="redraw" placeholder="Enter Company name here" translatesAutoresizingMaskIntoConstraints="NO" id="IKr-rS-IFW">
+                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                                <connections>
+                                    <outlet property="delegate" destination="2" id="8m4-j9-qzm"/>
+                                </connections>
+                            </searchBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="IKr-rS-IFW" firstAttribute="trailing" secondItem="5" secondAttribute="trailing" type="default" id="1RF-h5-LQm"/>
+                            <constraint firstItem="bWe-nM-I0k" firstAttribute="bottom" secondItem="5" secondAttribute="bottom" type="default" id="Dbg-qC-tNU"/>
+                            <constraint firstItem="bWe-nM-I0k" firstAttribute="top" secondItem="IKr-rS-IFW" secondAttribute="bottom" type="default" id="Dzt-tY-ZtA"/>
+                            <constraint firstItem="IKr-rS-IFW" firstAttribute="leading" secondItem="5" secondAttribute="leading" type="default" id="HFn-eF-owz"/>
+                            <constraint firstItem="IKr-rS-IFW" firstAttribute="top" secondItem="5" secondAttribute="top" type="default" id="XIT-DP-mKZ"/>
+                            <constraint firstItem="bWe-nM-I0k" firstAttribute="leading" secondItem="5" secondAttribute="leading" type="default" id="jPk-WZ-Whn"/>
+                            <constraint firstItem="bWe-nM-I0k" firstAttribute="trailing" secondItem="5" secondAttribute="trailing" type="default" id="z6u-an-hU6"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="F6A-BM-fJ6">
+                        <barButtonItem key="leftBarButtonItem" title="ABOUT" id="E2Y-P3-1sx">
+                            <connections>
+                                <action selector="aboutButtonPressed:" destination="2" id="bty-yc-4zf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="companyTableView" destination="bWe-nM-I0k" id="5lz-il-TfA"/>
+                        <outlet property="searchBar" destination="IKr-rS-IFW" id="imj-Qt-yfL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="611" y="-200"/>
+        </scene>
+    </scenes>
+    <classes>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="aboutButtonPressed:"/>
+                <relationship kind="action" name="addToComparePressed:"/>
+                <relationship kind="action" name="pieBarButtonPressed:"/>
+                <relationship kind="action" name="plotLinePressed:"/>
+                <relationship kind="action" name="quotePressed:"/>
+                <relationship kind="outlet" name="companyTableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="searchBar" candidateClass="UISearchBar"/>
+            </relationships>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>
